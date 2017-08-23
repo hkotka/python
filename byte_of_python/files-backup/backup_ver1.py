@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-
 import os
 import time
+from sys import argv
 
 source = ['/home/henkka/files', '/home/henkka/files2']
 
@@ -22,7 +22,11 @@ if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
-zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
+if len(argv) > 1:
+    if argv[1] == 'v':
+       zip_command = "zip -rv {0} {1}".format(target, ' '.join(source))
+else:
+    zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
 if os.system(zip_command) == 0:
     print('Successful backup to', target)
