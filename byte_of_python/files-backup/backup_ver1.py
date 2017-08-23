@@ -10,13 +10,17 @@ target_dir = '/home/henkka/backup'
 today = target_dir + os.sep + time.strftime('%Y%m%d')
 now = time.strftime('%H%M%S')
 
+# Take the user input comment as a name of the zip file
+comment = input('Enter a comment -->')
+if len(comment) == 0: # check if comment was entered
+    target = today + os.sep + now + '.zip'
+else:
+    target = today + os.sep + now + '_' + comment.replace(' ', '_') + '.zip'
+
 # Create the subdirectory if it isn‚t already there
 if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
-
-# The name of the zip file
-target = today + os.sep + now + '.zip'
 
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
