@@ -25,6 +25,8 @@ if not os.path.exists(today):
 if len(argv) > 1:
     if argv[1] == 'v':
        zip_command = "zip -rv {0} {1}".format(target, ' '.join(source))
+    elif argv[1] != 'v':
+       zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 else:
     zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
