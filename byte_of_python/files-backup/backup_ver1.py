@@ -22,10 +22,17 @@ if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
+# User can pass additional source folders for backup as arguments
 if len(argv) > 1:
-    if argv[1] == 'v':
+    for arg in argv[1:]:
+       if arg != '-v':
+          source.append(arg)
+
+# Run zip program with verbose output if the user passes -v argument
+if len(argv) > 1:
+    if argv[1] == '-v':
        zip_command = "zip -rv {0} {1}".format(target, ' '.join(source))
-    elif argv[1] != 'v':
+    elif argv[1] != '-v':
        zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 else:
     zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
