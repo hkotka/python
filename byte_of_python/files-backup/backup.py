@@ -24,7 +24,7 @@ if not os.path.exists(today):
 
 # User can pass additional source folders for backup as arguments
 if len(argv) > 1:
-    for arg in argv[1:]:
+    for arg in argv:
         if arg != '-v':
             source.append(arg)
 
