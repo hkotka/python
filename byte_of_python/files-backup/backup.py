@@ -38,14 +38,14 @@ if comment == 0: # check if comment was entered
 else:
     target = today + os.sep + now + '_' + comment.replace(' ', '_') + '.zip'
 
-zip_commandFinal = zip_command+"{0} {1}".format(target, ' '.join(source))
+zip_command = zip_command+"{0} {1}".format(target, ' '.join(source))
 
 # Create the subdirectory if it isn‚t already there
 if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
-if os.system(zip_commandFinal) == 0:
+if os.system(zip_command) == 0:
     print('Successful backup to', target)
 else:
     print('Backup FAILED')
