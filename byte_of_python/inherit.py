@@ -31,7 +31,7 @@ class Student(SchoolMember):
         print('Marks: "{0:d}"'.format(self.marks))
 
 t = Teacher('Mrs. Sirpale', 40, 41000)
-s =  Student('Kekkonen', 21, 65)
+s = Student('Kekkonen', 21, 65)
 
 print()
 
