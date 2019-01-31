@@ -11,9 +11,7 @@ for line in fh:
         count = count + 1
         lst.append(sline[1])
 
-i = -1
-for item in lst:
-    i = i + 1
+for i, item in enumerate(lst):
     print(lst[i])
 
 print("There were", count, "lines in the file with From as the first word")
