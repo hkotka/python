@@ -53,6 +53,8 @@ coverage.xml
 # sqlite databases
 *.sqlite
 
+*.xml
+
 # Translations
 *.mo
 *.pot
