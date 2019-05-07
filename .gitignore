@@ -53,6 +53,7 @@ coverage.xml
 # sqlite databases
 *.sqlite
 
+*.json
 *.xml
 
 # Translations
